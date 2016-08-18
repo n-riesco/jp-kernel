@@ -1,0 +1,41 @@
+{
+    "name": "jp-kernel",
+    "version": "0.0.1",
+    "description": "Generic Node.js kernel for the Jupyter notebook",
+    "keywords": [
+        "kernel",
+        "ipython",
+        "jupyter",
+        "ijavascript",
+        "jp-babel",
+        "jp-coffeescript"
+    ],
+    "homepage": "https://n-riesco.github.io/jp-kernel",
+    "bugs": {
+        "url": "https://github.com/n-riesco/jp-kernel/issues"
+    },
+    "license": "BSD-3-Clause",
+    "author": {
+        "author": "Nicolas Riesco",
+        "email": "enquiries@nicolasriesco.net",
+        "url": "http://www.nicolasriesco.net/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/n-riesco/jp-kernel.git"
+    },
+    "dependencies": {
+        "jmp": "0.4.x",
+        "nel": "0.5.x"
+    },
+    "devDependencies": {
+        "jsdoc": "latest",
+        "jshint": "latest",
+        "debug": "latest"
+    },
+    "scripts": {
+        "doc": "jsdoc -R README.md -d docs index.js lib",
+        "lint": "jshint index.js lib/ test/",
+        "test": "npm run lint && node test/index.js"
+    }
+}
