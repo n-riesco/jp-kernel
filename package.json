@@ -36,6 +36,8 @@
     "scripts": {
         "doc": "jsdoc -R README.md -d docs index.js lib",
         "lint": "jshint index.js lib/ test/",
-        "test": "npm run lint && node test/index.js"
+        "test:4": "node test/index.js --protocol=4.1",
+        "test:5": "node test/index.js --protocol=5.0",
+        "test": "npm run lint && npm run test:4 && npm run test:5"
     }
 }
