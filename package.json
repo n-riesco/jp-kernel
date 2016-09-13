@@ -31,13 +31,13 @@
     "devDependencies": {
         "jsdoc": "latest",
         "jshint": "latest",
-        "debug": "latest"
+        "debug": "2.x",
+        "mocha": "3.x"
     },
     "scripts": {
         "doc": "jsdoc -R README.md -d docs index.js lib",
         "lint": "jshint index.js lib/ test/",
-        "test:4": "node test/index.js --protocol=4.1",
-        "test:5": "node test/index.js --protocol=5.0",
-        "test": "npm run lint && npm run test:4 && npm run test:5"
+        "test:mocha": "mocha",
+        "test": "npm run lint && npm run test:mocha"
     }
 }
