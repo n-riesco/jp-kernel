@@ -62,3 +62,102 @@ First of all, thank you for taking the time to contribute. Please, read
 [CONTRIBUTING.md](CONTRIBUTING.md) and use the [issue
 tracker](https://github.com/n-riesco/jp-kernel/issues) for any contributions:
 support requests, bug reports, enhancement requests, pull requests, ...
+
+# New API
+
+The `jp-kernel` API in the initial release v0.0.1 came into existence by a
+process of evolution. I want to take the opportunity that distributing
+`jp-kernel` as a package offers to design a new API. Below is a preview of what
+I have in mind:
+
+```js
+class Kernel {
+    constructor(config) {
+        this.config = config;
+
+        this.executionCount = 0;
+
+        this.session = new Session({
+            cwd: this.config.cwd,
+            parser: this.config.parser,
+            transpile: this.config.transpile,
+        });
+
+        this._init();
+    }
+
+    _init(initCB) {}
+    interrupt(interruptCB) {}
+    destroy(destroyCB) {}
+    restart(restartCB) {}
+
+    _onShellMessage(message) {}
+    _onControlMessage(message) {}
+    _onIOPubMessage(message) {}
+    _onHBMessage(message) {}
+}
+```
+
+```js
+class KernelV4 extends Kernel {
+    onStdout(data) {}
+    onStderr(data) {}
+    onShell_xxx(request) {}
+}
+```
+
+```js
+class KernelV5 extends Kernel {
+    onStdout(data) {}
+    onStderr(data) {}
+    onShell_xxx(request) {}
+}
+```
+
+```js
+class Config {
+    constructor(kernelConfig) {
+        this.hideUndefined = kernelConfig.hideUndefined;
+        this.initSession = kernelConfig.initSession;
+        this.initScripts = kernelConfig.initScripts;
+        this.kernelInfoReply = kernelConfig.kernelInfoReply;
+        this.protocolVersion = kernelConfig.protocolVersion;
+
+        this.connection = kernelConfig.connection;
+        this.parser = kernelConfig.parser;
+    }
+}
+```
+
+```js
+class Connection {
+    constructor(connectionConfig) {
+        this.config = connectionConfig;
+        this.socket = {
+            control: new jmp.Socket("router", scheme, key),
+            shell: new jmp.Socket("router", scheme, key),
+            iopub: new jmp.Socket("pub", scheme, key),
+            hb: zmq.createSocket("rep"),
+        };
+    }
+
+    connect(listeners) {}
+    disconnect() {}
+}
+```
+
+```js
+class Parser{
+    constructor() {
+        throw new Error("Cannot construct an abstract class");
+    }
+
+    getIdentifier(code, position) {
+        throw new Error("Not implemented");
+    }
+
+    validate(code) {
+        throw new Error("Not implemented");
+    }
+}
+```
