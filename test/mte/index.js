@@ -50,11 +50,6 @@ var jmp = require("jmp");
 var zmq = jmp.zmq;
 var Kernel = require("../..");
 
-var TIMEOUT = 2500; // ms
-function onTimeout() {
-    throw new Error("Timeout error");
-}
-
 /**
  * @class     MessagingTestEngine
  * @classdesc Engine to send messaging requests and test responses
