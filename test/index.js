@@ -71,18 +71,18 @@ describe("A Kernel instance", function() {
 
 function testHeartBeat(mte) {
     it("has heart beats", function(done) {
-        var hbCount = 0;
-        for (var i = 0; i < 10; i++) {
-            mte.socket.hb.send();
-            hbCount++;
-        }
+        var hbCount = 10;
 
         mte.socket.hb.on("message", onHeartBeat);
+
+        mte.socket.hb.send();
 
         function onHeartBeat() {
             hbCount--;
 
-            if (hbCount === 0) {
+            if (hbCount > 0) {
+                mte.socket.hb.send();
+            } else {
                 mte.socket.hb.removeListener("message", arguments.callee);
                 done();
             }
