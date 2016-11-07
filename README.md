@@ -18,6 +18,10 @@ the following kernels:
 
 ## Anouncements
 
+- Version v0.1.0 depends on `jmp@0.7.2`, and `jmp@0.7.2` depends on `zeromq`
+  (which provides prebuilt bindings to the ZMQ library and is now maintained by
+  the zeromq organisation).
+
 - Version v0.0.1 is the initial release based on IJavascript v5.0.13.
 
 
