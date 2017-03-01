@@ -14,4 +14,23 @@
             }
         }
     }]
+}, {
+    "description": "history_request",
+    "request": {
+        "shell": {
+            "header": {
+                "msg_type": "history_request"
+            }
+        }
+    },
+    "responses": [{
+        "shell": {
+            "header": {
+                "msg_type": "history_reply"
+            },
+            "content": {
+                "history": []
+            }
+        }
+    }]
 }]
