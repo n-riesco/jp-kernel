@@ -972,14 +972,14 @@
         }
     }]
 }, {
-    "description": "inspect_request: util.inspect",
+    "description": "inspect_request: window",
     "request": {
         "shell": {
             "header": {
                 "msg_type": "inspect_request"
             },
             "content": {
-                "code": "util.inspect",
+                "code": "window",
                 "cursor_pos": 12,
                 "detail_level": 0
             }
@@ -992,7 +992,7 @@
             },
             "content": {
                 "ename": "ReferenceError",
-                "evalue": "util is not defined",
+                "evalue": "window is not defined",
                 "status": "error"
             }
         }
