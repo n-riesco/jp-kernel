@@ -687,6 +687,133 @@
         }
     }]
 }, {
+    "description": "execute_request: $$.display().text(1);",
+    "request": {
+        "shell": {
+            "header": {
+                "msg_type": "execute_request"
+            },
+            "content": {
+                "code": "$$.display().text(1);"
+            }
+        }
+    },
+    "responses": [{
+        "iopub": {
+            "header": {
+                "msg_type": "display_data"
+            },
+            "content": {
+                "data": {
+                    "text/plain": 1
+                }
+            }
+        }
+    }]
+}, {
+    "description": "execute_request: $$.display('test').text(1);",
+    "request": {
+        "shell": {
+            "header": {
+                "msg_type": "execute_request"
+            },
+            "content": {
+                "code": "$$.display('test').text(1);"
+            }
+        }
+    },
+    "responses": [{
+        "iopub": {
+            "header": {
+                "msg_type": "display_data"
+            },
+            "content": {
+                "transient": {
+                    "display_id": "test"
+                },
+                "data": {
+                    "text/plain": 1
+                }
+            }
+        }
+    }]
+}, {
+    "description": "execute_request: var $test = $$.display('test'); $test.text(1); $test.text(2);",
+    "request": {
+        "shell": {
+            "header": {
+                "msg_type": "execute_request"
+            },
+            "content": {
+                "code": "var $test = $$.display('test'); $test.text(1); $test.text(2);"
+            }
+        }
+    },
+    "responses": [{
+        "iopub": {
+            "header": {
+                "msg_type": "display_data"
+            },
+            "content": {
+                "transient": {
+                    "display_id": "test"
+                },
+                "data": {
+                    "text/plain": 1
+                }
+            }
+        }
+    }, {
+        "iopub": {
+            "header": {
+                "msg_type": "update_display_data"
+            },
+            "content": {
+                "transient": {
+                    "display_id": "test"
+                },
+                "data": {
+                    "text/plain": 2
+                }
+            }
+        }
+    }]
+}, {
+    "description": "execute_request: $$.async(); $$.display().text(1); (function($$) {$$.display().text(2); $$.done();})($$);",
+    "request": {
+        "shell": {
+            "header": {
+                "msg_type": "execute_request"
+            },
+            "content": {
+                "code": "$$.async(); $$.display().text(1); (function($$) {$$.display().text(2); $$.done();})($$);"
+            }
+        }
+    },
+    "responses": [{
+        "iopub": {
+            "header": {
+                "msg_type": "display_data"
+            },
+            "content": {
+                "data": {
+                    "text/plain": 1
+                }
+            }
+        }
+    }, {
+        "iopub": {
+            "header": {
+                "msg_type": "display_data"
+            },
+            "content": {
+                "data": {
+                    "text/plain": 2
+                }
+            }
+        }
+    }]
+}, {
     "description": "complete_request: br|eak",
     "request": {
         "shell": {
