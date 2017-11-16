@@ -25,8 +25,8 @@
         "url": "https://github.com/n-riesco/jp-kernel.git"
     },
     "dependencies": {
-        "jmp": "^0.7.2",
-        "nel": "^0.5.4",
+        "jmp": "1",
+        "nel": "^0.5.7",
         "uuid": "3"
     },
     "devDependencies": {

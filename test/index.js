@@ -53,6 +53,7 @@ describe("A Kernel instance", function() {
 
         testHeartBeat(mte);
         testKernelInfoRequest(mte);
+        testInputRequest(mte);
         testMessagingProtocol(mte);
         testHeartBeat(mte);
     });
@@ -71,6 +72,7 @@ describe("A Kernel instance", function() {
         testHeartBeat(mte);
         testKernelInfoRequest(mte);
         testMessagingProtocol(mte);
+        testInputRequest(mte);
         testHeartBeat(mte);
     });
 });
@@ -167,5 +169,55 @@ function testMessagingProtocol(mte) {
                 mte.run(testCase);
             }, wait);
         });
+    });
+}
+
+function testInputRequest(mte) {
+    it("can run $$.input() and receive a response", function(done) {
+        var testCase = {
+            description: "$$.input()",
+            request: {
+                "shell": {
+                    "header": {
+                        "msg_type": "execute_request"
+                    },
+                    "content": {
+                        "allow_stdin": true,
+                        "code": "$$.input({prompt:'?', password: true}, function(error, reply) {$$.done(reply)});"
+                    }
+                }
+            },
+            responses: function testInputReply(response, socketName) {
+                if (socketName === "stdin") {
+                    response.respond(
+                        mte.socket.stdin,
+                        "input_reply", {
+                            value: "opensesame"
+                        }
+                    );
+                    return true;
+                } else if (socketName !== "iopub") {
+                    return true;
+                }
+
+                var major = parseInt(mte.version.protocol.split(".", 1)[0]);
+                var msg_type = (major < 5) ?  "pyout" : "execute_result";
+                if (response.header.msg_type !== msg_type) {
+                    return true;
+                }
+
+                assert.deepEqual(
+                    response.content.data, {
+                        "text/plain": "'opensesame'"
+                    },
+                    "Error: bad content"
+                );
+
+                return false;
+            },
+            done: done,
+        };
+
+        mte.run(testCase);
     });
 }
