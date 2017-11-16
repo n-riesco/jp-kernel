@@ -186,7 +186,7 @@ MessagingTestEngine.prototype.init = function(done) {
     this._initSockets();
     this._initKernel();
 
-    var socketNames = ["hb", "shell", "iopub", "control"];
+    var socketNames = ["hb", "shell", "stdin", "iopub", "control"];
 
     var waitGroup = socketNames.length;
     function onConnect() {
@@ -242,6 +242,7 @@ MessagingTestEngine.prototype._initSockets = function() {
     var address = transport + "://" + ip + ":";
     var scheme = "sha256";
     var key = crypto.randomBytes(256).toString('base64');
+    var identity = uuid.v4();
 
     this.connection = {
         transport: transport,
@@ -258,6 +259,8 @@ MessagingTestEngine.prototype._initSockets = function() {
         var socket = (socketName === "hb") ?
             new zmq.Socket(socketType) :
             new jmp.Socket(socketType, scheme, key);
+        socket.identity = identity;
+
         var port = Math.floor(1024 + Math.random() * (65536 - 1024));
 
         try {
