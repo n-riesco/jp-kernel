@@ -38,7 +38,7 @@
     "scripts": {
         "doc": "jsdoc -R README.md -d docs index.js lib",
         "lint": "jshint index.js lib/ test/",
-        "test:mocha": "mocha --bail",
-        "test": "npm run lint && npm run test:mocha"
+        "test:mocha": "mocha",
+        "test": "npm run lint && npm run test:mocha -- --bail"
     }
 }
