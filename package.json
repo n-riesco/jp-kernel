@@ -1,6 +1,6 @@
 {
     "name": "jp-kernel",
-    "version": "0.1.5",
+    "version": "1.0.0",
     "description": "Generic Node.js kernel for the Jupyter notebook",
     "keywords": [
         "kernel",
@@ -26,7 +26,7 @@
     },
     "dependencies": {
         "jmp": "1",
-        "nel": "^0.5.7",
+        "nel": "1",
         "uuid": "3"
     },
     "devDependencies": {

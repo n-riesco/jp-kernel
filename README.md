@@ -11,6 +11,8 @@ the following kernels:
 
 - [IJavascript](http://github.com/n-riesco/ijavascript)
 
+- [ITypescript](https://www.npmjs.com/package/itypescript)
+
 - [jp-babel](http://github.com/n-riesco/jp-babel)
 
 - [jp-coffeescript](http://github.com/n-riesco/jp-coffeescript)
@@ -18,11 +20,17 @@ the following kernels:
 
 ## Anouncements
 
-- Version v0.1.0 depends on `jmp@0.7.2`, and `jmp@0.7.2` depends on `zeromq`
+- Version 1.0.0 (stable API) handles flag `--hide-execution-result`.
+
+- Version 0.1.5 handles `input_request` and `input_reply` messages.
+
+- Version 0.1.4 handles `display_data` and `update_display_data` messages.
+
+- Version 0.1.0 depends on `jmp@0.7.2`, and `jmp@0.7.2` depends on `zeromq`
   (which provides prebuilt bindings to the ZMQ library and is now maintained by
   the zeromq organisation).
 
-- Version v0.0.1 is the initial release based on IJavascript v5.0.13.
+- Version 0.0.1 is the initial release based on IJavascript v5.0.13.
 
 
 ## Install
@@ -67,7 +75,7 @@ First of all, thank you for taking the time to contribute. Please, read
 tracker](https://github.com/n-riesco/jp-kernel/issues) for any contributions:
 support requests, bug reports, enhancement requests, pull requests, ...
 
-# New API
+# Next API v2
 
 The `jp-kernel` API in the initial release v0.0.1 came into existence by a
 process of evolution. I want to take the opportunity that distributing
