@@ -183,7 +183,7 @@ function testInputRequest(mte) {
                     },
                     "content": {
                         "allow_stdin": true,
-                        "code": "$$.input({prompt:'?', password: true}, function(error, reply) {$$.done(reply)});"
+                        "code": "$$.input({prompt:'?', password: true}, function(error, reply) {$$.done(reply)});" // eslint-disable-line max-len
                     }
                 }
             },

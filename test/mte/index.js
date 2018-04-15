@@ -338,6 +338,7 @@ MessagingTestEngine.prototype._disposeSockets = function() {
     this.socket.stdin.close();
 };
 
+/* eslint-disable complexity */
 /**
  * @method      _onMessage
  * @description Handle kernel message
@@ -379,11 +380,14 @@ MessagingTestEngine.prototype._onMessage = function(message, socketName) {
     }
 
     if (this._currentTestCase) {
-        if (DEBUG) console.log("Remaining tests", this._currentTestCase.responses);
+        if (DEBUG) {
+            console.log("Remaining tests", this._currentTestCase.responses);
+        }
     } else {
         if (DEBUG) console.log("No remaining tests");
     }
 };
+/* eslint-enable complexity */
 
 /**
  * @method      run
