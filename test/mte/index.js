@@ -41,7 +41,6 @@ var DEBUG = !!process.env.DEBUG;
 var assert = require("assert");
 var console = require("console");
 var crypto = require("crypto");
-var fs = require("fs");
 var path = require("path");
 var util = require("util");
 var uuid = require("uuid");
@@ -192,14 +191,14 @@ MessagingTestEngine.prototype.init = function(done) {
     function onConnect() {
         waitGroup--;
         if (waitGroup === 0) {
-            for(var i = 0; i < socketNames.length; i++) {
+            for (var i = 0; i < socketNames.length; i++) {
                 this.socket[socketNames[i]].unmonitor();
             }
             if (done) done();
         }
     }
 
-    for(var j = 0; j < socketNames.length; j++) {
+    for (var j = 0; j < socketNames.length; j++) {
         this.socket[socketNames[j]].on("connect", onConnect.bind(this));
         this.socket[socketNames[j]].monitor();
     }
@@ -241,7 +240,7 @@ MessagingTestEngine.prototype._initSockets = function() {
     var ip = "127.0.0.1";
     var address = transport + "://" + ip + ":";
     var scheme = "sha256";
-    var key = crypto.randomBytes(256).toString('base64');
+    var key = crypto.randomBytes(256).toString("base64");
     var identity = uuid.v4();
 
     this.connection = {
@@ -410,7 +409,7 @@ MessagingTestEngine.prototype.run = function(testCase) {
         this.version.protocol
     );
 
-    if (DEBUG) console.log("Running", util.inspect(testCase, { depth: 3 }));
+    if (DEBUG) console.log("Running", util.inspect(testCase, {depth: 3}));
 };
 
 /**
@@ -431,7 +430,7 @@ MessagingTestEngine.prototype._end = function() {
  */
 MessagingTestEngine.prototype._testResponse = function(message, socketName) {
     var responseTest = this._currentTestCase.responses;
-    if (typeof(responseTest) === "function") {
+    if (typeof responseTest === "function") {
         var expectingMoreResponses = responseTest(message, socketName);
         if (!expectingMoreResponses) {
             this._end();
@@ -486,7 +485,7 @@ MessagingTestEngine.prototype._testResponse = function(message, socketName) {
  * @static
  */
 MessagingTestEngine.compareMessage = function(observed, expected, description) {
-    if (typeof(expected) !== 'object') {
+    if (typeof expected !== "object") {
         assert.strictEqual(
             observed,
             expected,

@@ -201,7 +201,7 @@ function testInputRequest(mte) {
                 }
 
                 var major = parseInt(mte.version.protocol.split(".", 1)[0]);
-                var msg_type = (major < 5) ?  "pyout" : "execute_result";
+                var msg_type = (major < 5) ? "pyout" : "execute_result";
                 if (response.header.msg_type !== msg_type) {
                     return true;
                 }

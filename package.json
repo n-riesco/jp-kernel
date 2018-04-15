@@ -31,13 +31,13 @@
     },
     "devDependencies": {
         "debug": "2",
-        "jsdoc": "latest",
-        "jshint": "latest",
+        "eslint": "4",
+        "jsdoc": "3",
         "mocha": "3"
     },
     "scripts": {
         "doc": "jsdoc -R README.md -d docs index.js lib",
-        "lint": "jshint index.js lib/ test/",
+        "lint": "eslint index.js lib test",
         "test:mocha": "mocha",
         "test": "npm run lint && npm run test:mocha -- --bail"
     }
