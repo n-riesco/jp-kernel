@@ -33,4 +33,26 @@
             }
         }
     }]
+}, {
+    "description": "clear_output",
+    "request": {
+        "shell": {
+            "header": {
+                "msg_type": "execute_request"
+            },
+            "content": {
+		"code": "$$.clear({wait: true})"
+            }
+        }
+    },
+    "responses": [{
+        "iopub": {
+            "header": {
+                "msg_type": "clear_output"
+            },
+            "content": {
+		"wait": true
+            }
+        }
+    }]
 }]
