@@ -20,6 +20,8 @@ the following kernels:
 
 ## Anouncements
 
+- Version 1.3.0 use `jmp@2` if compatible with the version of Node.js.
+
 - Version 1.2.0 implements message `clear_output`.
 
 - Version 1.1.0 ensures metadata is defined in `display_data` messages.

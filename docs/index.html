@@ -43,7 +43,8 @@
 
 
     <section>
-        <article><h1>jp-kernel</h1><p><code>jp-kernel</code> is an <a href="https://www.npmjs.com/">npm module</a> for implementing a
+        <article><h1>jp-kernel</h1>
+<p><code>jp-kernel</code> is an <a href="https://www.npmjs.com/">npm module</a> for implementing a
 <a href="http://jupyter.readthedocs.io/en/latest/projects/kernels.html">Jupyter kernel</a>
 that interacts with a <a href="https://github.com/n-riesco/nel">Node.js session</a>.</p>
 <p><code>jp-kernel</code> is a spin-off library from
@@ -51,53 +52,83 @@ that interacts with a <a href="https://github.com/n-riesco/nel">Node.js session<
 the <a href="http://jupyter.org/">Jupyter notebook</a>. It is currently used to implement
 the following kernels:</p>
 <ul>
-<li><p><a href="http://github.com/n-riesco/ijavascript">IJavascript</a></p>
+<li>
+<p><a href="http://github.com/n-riesco/ijavascript">IJavascript</a></p>
 </li>
-<li><p><a href="https://www.npmjs.com/package/itypescript">ITypescript</a></p>
+<li>
+<p><a href="https://www.npmjs.com/package/itypescript">ITypescript</a></p>
 </li>
-<li><p><a href="http://github.com/n-riesco/jp-babel">jp-babel</a></p>
+<li>
+<p><a href="http://github.com/n-riesco/jp-babel">jp-babel</a></p>
 </li>
-<li><p><a href="http://github.com/n-riesco/jp-coffeescript">jp-coffeescript</a></p>
+<li>
+<p><a href="http://github.com/n-riesco/jp-coffeescript">jp-coffeescript</a></p>
 </li>
 </ul>
-<h2>Anouncements</h2><ul>
-<li><p>Version 1.0.0 (stable API) handles flag <code>--hide-execution-result</code>.</p>
+<h2>Anouncements</h2>
+<ul>
+<li>
+<p>Version 1.3.0 use <code>jmp@2</code> if compatible with the version of Node.js.</p>
 </li>
-<li><p>Version 0.1.5 handles <code>input_request</code> and <code>input_reply</code> messages.</p>
+<li>
+<p>Version 1.2.0 implements message <code>clear_output</code>.</p>
 </li>
-<li><p>Version 0.1.4 handles <code>display_data</code> and <code>update_display_data</code> messages.</p>
+<li>
+<p>Version 1.1.0 ensures metadata is defined in <code>display_data</code> messages.</p>
 </li>
-<li><p>Version 0.1.0 depends on <a href="mailto:`jmp@0.7.2">`jmp@0.7.2</a><code>, and</code><a href="mailto:jmp@0.7.2">jmp@0.7.2</a><code>depends on</code>zeromq`
+<li>
+<p>Version 1.0.0 (stable API) handles flag <code>--hide-execution-result</code>.</p>
+</li>
+<li>
+<p>Version 0.1.5 handles <code>input_request</code> and <code>input_reply</code> messages.</p>
+</li>
+<li>
+<p>Version 0.1.4 handles <code>display_data</code> and <code>update_display_data</code> messages.</p>
+</li>
+<li>
+<p>Version 0.1.0 depends on <code>jmp@0.7.2</code>, and <code>jmp@0.7.2</code> depends on <code>zeromq</code>
 (which provides prebuilt bindings to the ZMQ library and is now maintained by
 the zeromq organisation).</p>
 </li>
-<li><p>Version 0.0.1 is the initial release based on IJavascript v5.0.13.</p>
+<li>
+<p>Version 0.0.1 is the initial release based on IJavascript v5.0.13.</p>
 </li>
 </ul>
-<h2>Install</h2><p>The latest stable release is published on
+<h2>Install</h2>
+<p>The latest stable release is published on
 <a href="https://www.npmjs.com/package/jp-kernel"><code>npm</code></a> and can be installed by
 running:</p>
-<pre class="prettyprint source lang-sh"><code>npm install jp-kernel</code></pre><p>The master branch in the <a href="https://github.com/n-riesco/jp-kernel">github
+<pre class="prettyprint source lang-sh"><code>npm install jp-kernel
+</code></pre>
+<p>The master branch in the <a href="https://github.com/n-riesco/jp-kernel">github
 repository</a> provides the latest
 development version and can be installed by:</p>
 <pre class="prettyprint source lang-sh"><code>git clone https://github.com/n-riesco/jp-kernel.git
 cd jp-kernel
-npm install</code></pre><h2>Usage</h2><p>The source code documentation generated using <a href="http://usejsdoc.org/">JSDoc</a> can
+npm install
+</code></pre>
+<h2>Usage</h2>
+<p>The source code documentation generated using <a href="http://usejsdoc.org/">JSDoc</a> can
 be found <a href="http://n-riesco.github.io/jp-kernel/">here</a>.</p>
 <p>For real examples of usage, see the source documentation for:</p>
 <ul>
-<li><p><a href="http://n-riesco.github.io/ijavascript/jsdoc/index.html">IJavascript</a></p>
+<li>
+<p><a href="http://n-riesco.github.io/ijavascript/jsdoc/index.html">IJavascript</a></p>
 </li>
-<li><p><a href="http://n-riesco.github.io/jp-babel/">jp-babel</a></p>
+<li>
+<p><a href="http://n-riesco.github.io/jp-babel/">jp-babel</a></p>
 </li>
-<li><p><a href="http://n-riesco.github.io/jp-coffeescript/">jp-coffeescript</a></p>
+<li>
+<p><a href="http://n-riesco.github.io/jp-coffeescript/">jp-coffeescript</a></p>
 </li>
 </ul>
-<h1>Contributions</h1><p>First of all, thank you for taking the time to contribute. Please, read
+<h1>Contributions</h1>
+<p>First of all, thank you for taking the time to contribute. Please, read
 <a href="CONTRIBUTING.md">CONTRIBUTING.md</a> and use the <a href="https://github.com/n-riesco/jp-kernel/issues">issue
 tracker</a> for any contributions:
 support requests, bug reports, enhancement requests, pull requests, ...</p>
-<h1>Next API v2</h1><p>The <code>jp-kernel</code> API in the initial release v0.0.1 came into existence by a
+<h1>Next API v2</h1>
+<p>The <code>jp-kernel</code> API in the initial release v0.0.1 came into existence by a
 process of evolution. I want to take the opportunity that distributing
 <code>jp-kernel</code> as a package offers to design a new API. Below is a preview of what
 I have in mind:</p>
@@ -125,15 +156,21 @@ I have in mind:</p>
     _onControlMessage(message) {}
     _onIOPubMessage(message) {}
     _onHBMessage(message) {}
-}</code></pre><pre class="prettyprint source lang-js"><code>class KernelV4 extends Kernel {
+}
+</code></pre>
+<pre class="prettyprint source lang-js"><code>class KernelV4 extends Kernel {
     onStdout(data) {}
     onStderr(data) {}
     onShell_xxx(request) {}
-}</code></pre><pre class="prettyprint source lang-js"><code>class KernelV5 extends Kernel {
+}
+</code></pre>
+<pre class="prettyprint source lang-js"><code>class KernelV5 extends Kernel {
     onStdout(data) {}
     onStderr(data) {}
     onShell_xxx(request) {}
-}</code></pre><pre class="prettyprint source lang-js"><code>class Config {
+}
+</code></pre>
+<pre class="prettyprint source lang-js"><code>class Config {
     constructor(kernelConfig) {
         this.hideUndefined = kernelConfig.hideUndefined;
         this.initSession = kernelConfig.initSession;
@@ -144,7 +181,9 @@ I have in mind:</p>
         this.connection = kernelConfig.connection;
         this.parser = kernelConfig.parser;
     }
-}</code></pre><pre class="prettyprint source lang-js"><code>class Connection {
+}
+</code></pre>
+<pre class="prettyprint source lang-js"><code>class Connection {
     constructor(connectionConfig) {
         this.config = connectionConfig;
         this.socket = {
@@ -157,7 +196,9 @@ I have in mind:</p>
 
     connect(listeners) {}
     disconnect() {}
-}</code></pre><pre class="prettyprint source lang-js"><code>class Parser{
+}
+</code></pre>
+<pre class="prettyprint source lang-js"><code>class Parser{
     constructor() {
         throw new Error(&quot;Cannot construct an abstract class&quot;);
     }
@@ -169,7 +210,8 @@ I have in mind:</p>
     validate(code) {
         throw new Error(&quot;Not implemented&quot;);
     }
-}</code></pre></article>
+}
+</code></pre></article>
     </section>
 
 
@@ -186,7 +228,7 @@ I have in mind:</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Mon Jul 16 2018 11:49:51 GMT+0100 (BST)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.3</a> on Thu Sep 26 2019 13:59:49 GMT+0100 (BST)
 </footer>
 
 <script> prettyPrint(); </script>
