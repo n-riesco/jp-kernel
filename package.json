@@ -35,7 +35,9 @@
         "jsdoc": "3",
         "mocha": "3"
     },
-    "engineStrict": true,
+    "engines": {
+        "node": ">=6"
+    },
     "scripts": {
         "doc": "jsdoc -R README.md -d docs index.js lib",
         "lint": "eslint index.js lib test",
