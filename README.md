@@ -20,7 +20,9 @@ the following kernels:
 
 ## Anouncements
 
-- Version 1.3.0 use `jmp@2` if compatible with the version of Node.js.
+- Version 2.0.0 require Node.js v6 or above so that we can use `jmp@2`.
+
+- Version 1.3.0 (unpublished) use `jmp@2` if compatible with the version of Node.js.
 
 - Version 1.2.0 implements message `clear_output`.
 
